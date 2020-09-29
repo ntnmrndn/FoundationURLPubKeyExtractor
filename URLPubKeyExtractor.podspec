@@ -5,6 +5,15 @@ Pod::Spec.new do |spec|
   spec.summary      = "Easy way to extract the hash of a public key from a domain on iOS/macOS"
 
   spec.description  = <<-DESC
+ Easy way to extract the hash of a public key from a domain on iOS/macOS
+
+Usage:
+let url: URL = URL(string: "https://apple.com")!
+
+
+let extractor = PubKeyExtractor(url: url, completion: {
+    print("hash: \($0)")
+})
                    DESC
 
   spec.homepage     = "https://github.com/ntnmrndn/FoundationURLPubKeyExtractor"
@@ -16,5 +25,6 @@ Pod::Spec.new do |spec|
 
   spec.source_files  = "PubKeyExtractor.swift"
   spec.frameworks = "Foundation", "CryptoKit"
-
+  spec.ios.deployment_target = '14.0'
+  spec.swift_version = "5.3"
 end
