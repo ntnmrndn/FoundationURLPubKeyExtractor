@@ -1,7 +1,7 @@
 import Foundation
 
 @available(iOS 12.0, *)
-final class PubKeyExtractor: NSObject, URLSessionDelegate {
+public final class PubKeyExtractor: NSObject, URLSessionDelegate {
     let completion: (String) -> Void
     private var session: URLSession!
 
@@ -23,7 +23,7 @@ final class PubKeyExtractor: NSObject, URLSessionDelegate {
         }
     }
 
-    func urlSession(_ session: URLSession, didReceive challenge: URLAuthenticationChallenge, completionHandler: @escaping (URLSession.AuthChallengeDisposition, URLCredential?) -> Void) {
+    public func urlSession(_ session: URLSession, didReceive challenge: URLAuthenticationChallenge, completionHandler: @escaping (URLSession.AuthChallengeDisposition, URLCredential?) -> Void) {
         guard challenge.protectionSpace.authenticationMethod == NSURLAuthenticationMethodServerTrust,
               let serverTrust = challenge.protectionSpace.serverTrust,
               let publicKey = Self.getPubKey(serverTrust: serverTrust),
