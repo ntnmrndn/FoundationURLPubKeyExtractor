@@ -25,6 +25,6 @@ let extractor = PubKeyExtractor(url: url, completion: {
 
   spec.source_files  = "PubKeyExtractor.swift"
   spec.frameworks = "Foundation", "CryptoKit"
-  spec.ios.deployment_target = '14.0'
+  spec.ios.deployment_target = '8.0'
   spec.swift_version = "5.3"
 end
