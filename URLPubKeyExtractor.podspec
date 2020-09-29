@@ -24,7 +24,7 @@ let extractor = PubKeyExtractor(url: url, completion: {
   spec.source       = { :git => "https://github.com/ntnmrndn/FoundationURLPubKeyExtractor.git", :tag => "#{spec.version}" }
 
   spec.source_files  = "PubKeyExtractor.swift"
-  spec.frameworks = "Foundation", "CryptoKit"
+  spec.frameworks = "Foundation"
   spec.ios.deployment_target = '8.0'
   spec.swift_version = "5.3"
 end
