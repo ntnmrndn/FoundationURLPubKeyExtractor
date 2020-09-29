@@ -5,14 +5,14 @@ Pod::Spec.new do |spec|
   spec.summary      = "Easy way to extract the hash of a public key from a domain on iOS/macOS"
 
   spec.description  = <<-DESC
- Easy way to extract the hash of a public key from a domain on iOS/macOS
+ Easy way to extract a public key from a domain on iOS/macOS
 
 Usage:
 let url: URL = URL(string: "https://apple.com")!
 
 
 let extractor = PubKeyExtractor(url: url, completion: {
-    print("hash: \($0)")
+    print("base64: \($0)")
 })
                    DESC
 

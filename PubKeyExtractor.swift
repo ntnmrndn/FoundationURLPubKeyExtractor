@@ -1,9 +1,6 @@
 import Foundation
-#if canImport(CryptoKit)
-import CryptoKit
-#endif
 
-@available(iOS 13.0, *)
+@available(iOS 12.0, *)
 final class PubKeyExtractor: NSObject, URLSessionDelegate {
     let completion: (String) -> Void
     private var session: URLSession!
@@ -32,8 +29,7 @@ final class PubKeyExtractor: NSObject, URLSessionDelegate {
               let publicKey = Self.getPubKey(serverTrust: serverTrust),
               let publicKeyData = SecKeyCopyExternalRepresentation(publicKey, nil)
         else { return }
-        let publicKeyHash = SHA256.hash(data: publicKeyData as Data)
-        let hashString = publicKeyHash.compactMap { String(format: "%02x", $0) }.joined()
-        completion(hashString)
+        let publicKeyString = (publicKeyData as NSData).base64EncodedString(options: [])
+        completion(publicKeyString)
     }
 }
