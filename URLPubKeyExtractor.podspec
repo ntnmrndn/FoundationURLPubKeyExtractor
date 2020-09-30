@@ -1,7 +1,7 @@
 Pod::Spec.new do |spec|
 
   spec.name         = "URLPubKeyExtractor"
-  spec.version      = "1.0.0"
+  spec.version      = "1.1.0"
   spec.summary      = "Easy way to extract the hash of a public key from a domain on iOS/macOS"
 
   spec.description  = <<-DESC
@@ -30,7 +30,6 @@ PubKeyExtractor.getPubKey(url: url, completion: {
   spec.source       = { :git => "https://github.com/ntnmrndn/FoundationURLPubKeyExtractor.git", :tag => "#{spec.version}" }
 
   spec.source_files  = "PubKeyExtractor.swift"
-  spec.frameworks = "Foundation"
   spec.ios.deployment_target = '8.0'
   spec.swift_version = "5.3"
 end

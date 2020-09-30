@@ -4,13 +4,10 @@ Easy way to extract a public key from a domain on iOS/macOS
 Usage:
 
 ```
-let url: URL = URL(string: "https://apple.com")!
-
-
 PubKeyExtractor.getPubKey(url: url, completion: {
     switch $0 {
-    case .success(let string):
-        print("pubKey: \(string)")
+    case .success(let key):
+        print("pubKey: \(key.base64)")
     case .failure(let error):
         print("Could not get key because \(error)")
     }
