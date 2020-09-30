@@ -29,4 +29,4 @@ Todo: macOS compat (should take a few minutes...)
 
 Cocoapods:
 
-pod 'FoundationURLPubKeyExtractor'
+pod 'URLPubKeyExtractor'
