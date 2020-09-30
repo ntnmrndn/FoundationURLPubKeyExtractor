@@ -11,10 +11,16 @@ Usage:
 let url: URL = URL(string: "https://apple.com")!
 
 
-let extractor = PubKeyExtractor(url: url, completion: {
-    print("base64: \($0)")
+PubKeyExtractor.getPubKey(url: url, completion: {
+    switch $0 {
+    case .success(let string):
+        print("pubKey: \(string)")
+    case .failure(let error):
+        print("Could not get key because \(error)")
+    }
 })
-                   DESC
+
+                 DESC
 
   spec.homepage     = "https://github.com/ntnmrndn/FoundationURLPubKeyExtractor"
   spec.license      = { :type => "MIT", :file => "LICENSE" }
